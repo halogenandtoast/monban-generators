@@ -1,6 +1,7 @@
 # Monban::Generators
 
-Rails generators for adding in authentication components.
+Rails generators for adding in authentication components, using the
+[Monban](https://github.com/halogenandtoast/monban) authentication library.
 
 ## Installation
 
