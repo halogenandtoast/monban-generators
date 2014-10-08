@@ -11,11 +11,11 @@
 
   <div>
     <%= form.label :email %>
-    <%= form.email_field :email %>
+    <%= form.email_field :email, require: true %>
   </div>
   <div>
     <%= form.label :password %>
-    <%= form.password_field :password %>
+    <%= form.password_field :password, require: true %>
   </div>
   <div>
     <%= form.submit "Sign up" %>

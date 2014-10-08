@@ -6,7 +6,7 @@
   <%= form_for @password_reset do |form| %>
     <div class="text-field">
       <%= form.label :email %>
-      <%= form.email_field :email %>
+      <%= form.email_field :email, require: true %>
     </div>
 
     <div class="submit-field">
