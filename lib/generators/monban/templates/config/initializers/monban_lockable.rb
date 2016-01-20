@@ -29,13 +29,13 @@ Monban::Services::Authentication.class_eval do
 
   def authenticated?
     @user &&
-    active_for_authentication? &&
-    Monban.compare_token(@user.send(token_store_field), @undigested_token)
+      active_for_authentication? &&
+      Monban.compare_token(@user.send(token_store_field), @undigested_token)
   end
 
   def active_for_authentication?
     if !!Monban.config.maximum_failed_login_attempts ||
-      !!Monban.config.unlock_time_in_secs
+        !!Monban.config.unlock_time_in_secs
       @user.active?
     else
       true
