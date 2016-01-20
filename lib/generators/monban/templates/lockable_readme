@@ -2,3 +2,6 @@
     Final Steps
     run:
       rake db:migrate
+
+    In "user" model:
+      include MonbanLockable

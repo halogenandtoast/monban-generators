@@ -14,6 +14,14 @@ module Monban
         migration_template "db/migrate/add_lockable_fields_to_users.rb", "db/migrate/add_lockable_fields_to_users.rb"
       end
 
+      def copy_model_concerns
+        copy_file "app/models/concerns/monban_lockable.rb", "app/models/concerns/monban_lockable.rb"
+      end
+
+      def copy_lockable_initializer_file
+        copy_file "config/initializers/monban_lockable.rb", "config/initializers/monban_lockable.rb"
+      end
+
       def add_translations
         template "config/locales/monban.en.yml"
       end
