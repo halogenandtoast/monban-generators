@@ -15,7 +15,7 @@ And then execute:
 
 ## Generators
 
-Currently there are two generators available, but over time more will be added:
+Currently there are three generators available, but over time more will be added:
 
 ### Scaffold
 
@@ -32,6 +32,14 @@ If you'd like to generate basic password reset for your app, you can run:
 This will generate the necessary files for an implementation of resetting
 a user's password. It will ask you for host names for development, test
 and production environments in order to make the mailer work.
+
+### Lockable
+
+If you'd like to block user access after certain number of attempts, you can run:
+
+    rails g monban:lockable
+
+This will generate a migration file with basic fields needed for blocking user access.
 
 ## Contributing
 
