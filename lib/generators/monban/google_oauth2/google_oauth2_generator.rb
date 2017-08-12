@@ -1,9 +1,12 @@
 require 'rails/generators/active_record'
+require 'generators/monban/migration/version'
 
 module Monban
   module Generators
     class GoogleOauth2Generator < Rails::Generators::Base
       include Rails::Generators::Migration
+      include Monban::Generators::Migration
+
       source_root File.expand_path("../../templates", __FILE__)
 
       def add_gems
@@ -32,7 +35,7 @@ module Monban
 
       def add_model
         template 'app/models/external_credential.rb', 'app/models/external_credential.rb'
-        migration_template "db/migrate/create_external_credentials.rb", "db/migrate/create_external_credentials.rb"
+        migration_template "db/migrate/create_external_credentials.rb", "db/migrate/create_external_credentials.rb", migration_version: migration_version
       end
 
       def display_readme

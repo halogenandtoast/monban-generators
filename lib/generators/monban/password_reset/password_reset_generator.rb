@@ -1,9 +1,12 @@
 require 'rails/generators/active_record'
+require 'generators/monban/migration/version'
 
 module Monban
   module Generators
     class PasswordResetGenerator < Rails::Generators::Base
       include Rails::Generators::Migration
+      include Monban::Generators::Migration
+
       source_root File.expand_path("../../templates", __FILE__)
 
       def add_config_options
@@ -39,7 +42,7 @@ module Monban
 
       def add_model
         template 'app/models/password_reset.rb', 'app/models/password_reset.rb'
-        migration_template "db/migrate/create_password_resets.rb", "db/migrate/create_password_resets.rb"
+        migration_template "db/migrate/create_password_resets.rb", "db/migrate/create_password_resets.rb", migration_version: migration_version
       end
 
       def display_readme

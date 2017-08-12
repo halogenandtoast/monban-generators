@@ -1,9 +1,12 @@
 require 'rails/generators/active_record'
+require 'generators/monban/migration/version'
 
 module Monban
   module Generators
     class ScaffoldGenerator < Rails::Generators::Base
       include Rails::Generators::Migration
+      include Monban::Generators::Migration
+
       source_root File.expand_path("../../templates", __FILE__)
 
       def add_routes
@@ -31,7 +34,7 @@ module Monban
 
       def add_model
         template 'app/models/user.rb', 'app/models/user.rb'
-        migration_template "db/migrate/create_users.rb", "db/migrate/create_users.rb"
+        migration_template "db/migrate/create_users.rb", "db/migrate/create_users.rb", migration_version: migration_version
       end
 
       def add_translations

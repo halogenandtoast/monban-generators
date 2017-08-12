@@ -1,4 +1,4 @@
-class CreateExternalCredentials < ActiveRecord::Migration[<%= ActiveRecord::Migration.current_version %>]
+class CreateExternalCredentials < ActiveRecord::Migration<%= migration_version %>
   def change
     create_table :external_credentials do |t|
       t.string :uid

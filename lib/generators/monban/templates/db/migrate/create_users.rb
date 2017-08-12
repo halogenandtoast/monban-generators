@@ -1,4 +1,4 @@
-class CreateUsers < ActiveRecord::Migration[<%= ActiveRecord::Migration.current_version %>]
+class CreateUsers < ActiveRecord::Migration<%= migration_version %>
   def change
     create_table :users do |t|
       t.string :email, null: false
